@@ -5,3 +5,6 @@ PLEASE NOTE THAT THE MENU AND OTHER PARTS WERE HELPED WITH BY AI
 
 
 Main game components/code developed by me
+
+
+Support about the game/etc is available by email: galatic2ddevs@outlook.com
