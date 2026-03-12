@@ -11,6 +11,7 @@ Support about the game/etc is available by email: galatic2ddevs@outlook.com
 
 
 Credits:
+
 Father-of-Death -- Song in the background: https://father-of-death.newgrounds.com/
 
 Maffi -- Boss Song: https://maffi.newgrounds.com/
