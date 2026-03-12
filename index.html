@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galactic2D</title>
+<style>
+    body {
+        background: #0b0b2a;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 50px;
+    }
+    h1 {
+        font-size: 70px;
+        color: #0ff;
+        text-shadow: 0 0 10px #0ff;
+        margin-bottom: 40px;
+    }
+    button {
+        font-size: 28px;
+        margin: 10px 20px;
+        padding: 15px 30px;
+        border: 2px solid #0ff;
+        background: none;
+        color: #0ff;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    button:hover {
+        background: #0ff;
+        color: #000;
+    }
+    section {
+        display: none;
+        margin-top: 40px;
+    }
+    #countdown {
+        font-size: 28px;
+        color: #ff0;
+        margin: 20px 0;
+    }
+    #download-btn {
+        display: none;
+        font-size: 28px;
+        color: #0f0;
+        text-decoration: none;
+        padding: 15px 30px;
+        border: 2px solid #0f0;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+    #download-btn:hover {
+        background: #0f0;
+        color: #000;
+    }
+    a.github-link {
+        color: #0ff;
+        text-decoration: none;
+    }
+    a.github-link:hover {
+        text-decoration: underline;
+    }
+    p {
+        font-size: 20px;
+        max-width: 700px;
+        margin: 20px auto;
+        line-height: 1.6;
+        color: #ccc;
+    }
+</style>
+</head>
+<body>
+
+<h1>GALACTIC2D</h1>
+
+<!-- Buttons below the title -->
+<button onclick="showSection('about')">About</button>
+<button onclick="showSection('download')">Download</button>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About the Game</h2>
+    <p>
+    Galatic2D is a game about progression. Defeat bosses, buy powerups and more.
+    </p>
+</section>
+
+<!-- Download Section -->
+<section id="download">
+    <div id="countdown">Unlocking download in 5...</div>
+    <a id="download-btn" href="https://github.com/WEBDEV-MAKER/GALATIC2D/releases/download/Release-1.0/Galatic2D.zip" download>
+        Download Galactic2D
+    </a>
+    <p style="margin-top:40px;">
+        Discover pre-releases and more on our GitHub: 
+        <a class="github-link" href="https://github.com/WEBDEV-MAKER/GALATIC2D" target="_blank">https://github.com/WEBDEV-MAKER/GALATIC2D</a>
+    </p>
+</section>
+
+<script>
+function showSection(id){
+    // Hide everything first
+    document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+    
+    // Show the clicked section
+    const section = document.getElementById(id);
+    section.style.display = 'block';
+
+    // If it's download, start countdown
+    if(id === 'download') startCountdown();
+}
+
+// Countdown logic
+let countdownStarted = false;
+function startCountdown(){
+    if(countdownStarted) return;
+    countdownStarted = true;
+
+    let count = 5;
+    const countdownEl = document.getElementById('countdown');
+    const downloadBtn = document.getElementById('download-btn');
+
+    downloadBtn.style.display = 'none';
+
+    const interval = setInterval(() => {
+        countdownEl.textContent = "Unlocking download in " + count + "...";
+        count--;
+        if(count < 0){
+            clearInterval(interval);
+            countdownEl.textContent = "Download ready!";
+            downloadBtn.style.display = "inline-block";
+        }
+    }, 1000);
+}
+</script>
+
+</body>
+</html>
